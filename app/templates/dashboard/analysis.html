@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/analysis.css') }}" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" />
+  <title>Analysis</title>
+  <meta name="description" content="SWOT Analysis App built using Flask." />
+  <meta name="author" content="VIIT Students" />
+  <meta name="theme-color" content="transparent" />
+  <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="transparent" />
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/icons/apple-touch-icon.png') }}"
+    sizes="180x180" />
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon" sizes="32x32" />
+</head>
+
+<body>
+  <div class="login-2-6-para">
+    <div class="login-2-6-para-child"></div>
+    <div class="parameters">
+      <div class="parameters-child">
+        <b class="Name">{{ user['Full Name'] }}</b>
+        <b class="Branch">TY - {{ user["Branch"] }}</b>
+        <b class="PRN">{{ user["PRN"] }}</b>
+        <b class="CGPA">CGPA: {{ user["Latest CGPA"] }}</b>
+        <b class="Language">
+          {% if user["Developer"] %}
+          {{ user["Programming Language Preference [1]"] }} Developer
+          {% else %}
+          {{ user["Branch"] }} Engineer
+          {% endif %}
+        </b>
+        <div class="Percentile">
+          <h3>Percentile</h3>
+          <h1>{{ user["percentile"] }}</h1>
+        </div>
+        <div class="Grade">
+          <h3>Grade</h3>
+          <h1>{{ user["grade"] }}</h1>
+        </div>
+        <hr class="hr" />
+        <h2 class="overall-analysis-container">
+          Overview
+        </h2>
+        <div class="group-div">
+          <div class="rectangle-parent">
+            <div class="DSA">
+              <h3>
+                {% if user["Developer"] %} DSA %
+                {% else %} Domain % {% endif %}
+              </h3>
+              <h1>{{ user["dsa_percentile"] }}</h1>
+            </div>
+            <div class="Project">
+              <h3>Projects</h3>
+              <h1>{{ user['Participation Count [Mini Projects]'] }}</h1>
+            </div>
+            <div class="Hackathon">
+              <h3>Hackathons</h3>
+              <h1>{{ user['Participation Count [Hackathons]'] }}</h1>
+            </div>
+            <div class="academics">
+              <h3>Academics %</h3>
+              <h1>{{ user['cgpa_percentile'] }}</h1>
+            </div>
+            <div class="Internship">
+              <h3>Internships</h3>
+              <h1>{{ user['Participation Count [Internships]'] }}</h1>
+            </div>
+            <div class="Research">
+              <h3>Industry Projects</h3>
+              <h1>{{ user["Participation Count [Industry Projects]"] }}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grade-analysis">
+        <button id="btnAdd" display="block" type="button">Install</button>
+        <button><a href="/grades">My Analysis</a></button>
+      </div>
+    </div>
+    <div class="icon-line-chart-parent">
+      <button class="icon-line-chart" aria-label="Analysis" onclick="window.location.href='/analysis'"></button>
+      <button class="icon-pie-chart" aria-label="Dashboard" onclick="window.location.href='/dashboard'"></button>
+      <button class="icon-user" aria-label="Profile" onclick="window.location.href='/profile'"></button>
+    </div>
+  </div>
+  <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+  <script>
+    var dsaScore = document.querySelector(".DSA h1").innerHTML;
+    var academicsScore = document.querySelector(".academics h1").innerHTML;
+    var projectsDone = document.querySelector(".Project h1").innerHTML;
+    var internshipsDone = document.querySelector(".Internship h1").innerHTML;
+    var numberOfHackathons = document.querySelector(".Hackathon h1").innerHTML;
+    var industryProjects = document.querySelector(".Research h1").innerHTML;
+    if (dsaScore >= 80) {
+      document.querySelector(".DSA").classList.add("makeGreen");
+    }
+    else if (dsaScore < 80 && dsaScore >= 60) {
+      document.querySelector(".DSA").classList.add("makeYellow");
+    }
+    else {
+      document.querySelector(".DSA").classList.add("makeRed");
+    }
+    if (academicsScore >= 80) {
+      document.querySelector(".academics").classList.add("makeGreen");
+    }
+    else if (academicsScore < 80 && academicsScore >= 60) {
+      document.querySelector(".academics").classList.add("makeYellow");
+    }
+    else {
+      document.querySelector(".academics").classList.add("makeRed");
+    }
+    if (projectsDone >= 3 || projectsDone == '5+') {
+      document.querySelector(".Project").classList.add("makeGreen");
+    }
+    else if (projectsDone < 3 && projectsDone >= 2) {
+      document.querySelector(".Project").classList.add("makeYellow");
+    }
+    else {
+      document.querySelector(".Project").classList.add("makeRed");
+    }
+    if (internshipsDone >= 2 || internshipsDone == '5+') {
+      document.querySelector(".Internship").classList.add("makeGreen");
+    }
+    else if (internshipsDone < 2 && internshipsDone >= 1) {
+      document.querySelector(".Internship").classList.add("makeYellow");
+    }
+    else {
+      document.querySelector(".Internship").classList.add("makeRed");
+    }
+    if (numberOfHackathons >= 3 || numberOfHackathons == '5+') {
+      document.querySelector(".Hackathon").classList.add("makeGreen");
+    }
+    else if (numberOfHackathons < 3 && numberOfHackathons >= 1) {
+      document.querySelector(".Hackathon").classList.add("makeYellow");
+    }
+    else {
+      document.querySelector(".Hackathon").classList.add("makeRed");
+    }
+    if (industryProjects >= 3 || industryProjects == '5+') {
+      document.querySelector(".Research").classList.add("makeGreen");
+    }
+    else if (industryProjects < 3 && industryProjects >= 1) {
+      document.querySelector(".Research").classList.add("makeYellow");
+    }
+    else {
+      document.querySelector(".Research").classList.add("makeRed");
+    }
+  </script>
+</body>
+
+</html>

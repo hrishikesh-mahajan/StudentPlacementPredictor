@@ -1,0 +1,142 @@
+:root {
+  --font-roboto: Roboto;
+  --font-size-6xl: 25px;
+  --eighth: #65a7e4;
+  --white: #ffffff;
+  --e1: #d6a419;
+}
+.iphone-14-15-pro-max-1-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, #00274e, rgba(0, 71, 147, 0));
+  width: 100vw;
+  height: 100vh;
+}
+.iphone-14-15-pro-max-1-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.group-child,
+.pm {
+  position: absolute;
+  top: 0;
+}
+.pm {
+  left: 0;
+  display: inline-block;
+  width: 79.2px;
+}
+.group-child {
+  left: 308.6px;
+  width: 78px;
+  height: 16.9px;
+}
+.pm-parent {
+  position: relative;
+  width: 386.6px;
+  height: 21px;
+}
+.iphone-14-15-pro-max-1-inner {
+  position: absolute;
+  top: 136.6px;
+  left: calc(50% - 114px);
+  width: 228.8px;
+  height: 228.8px;
+  object-fit: cover;
+}
+.login-child {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 12px;
+  background-color: var(--e1);
+}
+.login,
+.login-child,
+.login1 {
+  position: absolute;
+}
+.login1 {
+  width: 100%;
+  top: 8%;
+  left: 0;
+  font-size: 35px;
+  font-weight: 900;
+  font-family: var(--font-roboto);
+  color: var(--white);
+  text-align: center;
+  display: inline-block;
+}
+.login {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 618px;
+  left: 158px;
+  width: 114px;
+  height: 50px;
+}
+.iphone-14-15-pro-max-1 {
+  position: relative;
+  background-color: var(--eighth);
+  width: 100vw;
+  min-height: 600px;
+  height: 100vh;
+  overflow: hidden;
+  text-align: left;
+  font-size: 18px;
+  color: var(--white);
+  font-family: var(--font-roboto);
+}
+.iphone-14-15-pro-max-1 > form {
+  position: absolute;
+  top: 370px;
+  left: calc(50% - 150px);
+  width: 280.8px;
+  height: 228.8px;
+  object-fit: cover;
+}
+.iphone-14-15-pro-max-1 > form > input {
+  height: 20px;
+  border-radius: 10px;
+}
+.iphone-14-15-pro-max-1 > form > input[type="submit"] {
+  position: relative;
+  left: 20%;
+  height: 30px;
+  cursor: pointer;
+  background-color: #d6a419;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: var(--font-roboto), sans-serif;
+  font-weight: bold;
+  color: #000d4e;
+  border: none;
+}
+.iphone-14-15-pro-max-1 > form > a {
+  position: relative;
+  left: 25%;
+  cursor: pointer;
+  background-color: #d6a419;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: var(--font-roboto), sans-serif;
+  font-weight: bold;
+  color: #000d4e;
+  text-decoration: none;
+  padding: 3.5px 3.5px;
+}
+.flash {
+  margin: 1em 0;
+  padding: 1em;
+  background: #cae6f6;
+  border: 1px solid #377ba8;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" />
+  <title>Login</title>
+  <meta name="description" content="SWOT Analysis App built using Flask." />
+  <meta name="author" content="VIIT Students" />
+  <meta name="theme-color" content="transparent" />
+  <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="transparent" />
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/icons/apple-touch-icon.png') }}"
+    sizes="180x180" />
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon" sizes="32x32" />
+</head>
+
+<body>
+  {% for message in get_flashed_messages() %}
+  <div class="flash">{{ message }}</div>
+  {% endfor %}
+  <div class="iphone-14-15-pro-max-1">
+    <div class="iphone-14-15-pro-max-1-child"></div>
+    <img class="iphone-14-15-pro-max-1-inner" alt="" src="{{ url_for('static', filename='images/vi-logo.svg') }}" />
+    <form method="post">
+      <label for="username">Username</label>
+      <input name="username" id="username" required />
+      <label for=""><br><br></label>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required />
+      <label for=""><br><br></label>
+      <input type="submit" value="Log In" />
+      <a href="/auth/register">Register</a>
+    </form>
+  </div>
+</body>
+
+</html>

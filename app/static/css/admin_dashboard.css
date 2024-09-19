@@ -1,0 +1,219 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-roboto: Roboto;
+  /* font sizes */
+  --font-size-6xl: 25px;
+  --font-size-16xl: 35px;
+  /* Colors */
+  --white: #fff;
+  --color-gray: rgb(255, 255, 255);
+  --color-gainsboro: rgba(217, 217, 217, 0);
+  --e1: #d6a419;
+  /* Border radiuses */
+  --br-xs: 12px;
+  --br-18xl-8: 37.8px;
+}
+.admin-login {
+  position: absolute;
+  background: linear-gradient(180deg, #000d4e, #487acd);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-6xl);
+  color: var(--color-gray);
+  font-family: var(--font-roboto);
+}
+.admin-login > .square {
+  position: inherit;
+  height: 85%;
+  width: 90%;
+  left: 5%;
+  top: 10%;
+  border-radius: 14.647px;
+  border: 0.976px solid #fff;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(217, 217, 217, 0) 100%
+    );
+  box-shadow: 0px 3.906px 23.435px -0.976px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(24.410993576049805px);
+}
+.admin-login > .square > .mob {
+  position: inherit;
+  left: -5%;
+  top: 5%;
+}
+.admin-login > .square > .mob > img {
+  position: relative;
+  width: 70%;
+}
+.admin-login > .square > .frames {
+  position: inherit;
+  left: 3%;
+  top: 15%;
+  width: 230px;
+  height: 440px;
+  border-radius: 12.038px;
+  border: 0.803px solid #fff;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(217, 217, 217, 0) 100%
+    );
+  box-shadow: 0px 3.21px 19.261px -0.803px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20.063114166259766px);
+  /* background-color: black; */
+}
+.admin-login > .square > .frames > iframe {
+  position: relative;
+  left: 0%;
+  top: -5%;
+  width: 225px;
+  height: 115px;
+}
+.admin-login > .square > .upper_buttons {
+  position: inherit;
+  left: 30%;
+  top: 5%;
+  width: 65%;
+  height: 150px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #19309f, #5b87ce);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.39);
+}
+.admin-login > .square > .upper_buttons > .dashboard {
+  position: inherit;
+  background: url("../images/1.png");
+  height: 130px;
+  width: 160px;
+  top: 10%;
+  left: 10%;
+  border: #000d4e;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.admin-login > .square > .upper_buttons > .dashboard:hover {
+  transform: scale(1.1);
+}
+.admin-login > .square > .upper_buttons > .gform {
+  position: inherit;
+  background: url("../images/2.png");
+  height: 120px;
+  width: 130px;
+  top: 10%;
+  left: 44%;
+  right: 66%;
+  border: #000d4e;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.admin-login > .square > .upper_buttons > .gform:hover {
+  transform: scale(1.1);
+}
+.admin-login > .square > .upper_buttons > .email {
+  position: inherit;
+  background: url("../images/3.png");
+  height: 115px;
+  width: 135px;
+  top: 10%;
+  right: 10%;
+  border: #000d4e;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.admin-login > .square > .upper_buttons > .email:hover {
+  transform: scale(1.1);
+}
+.admin-login > .square > .links {
+  position: inherit;
+  top: 37%;
+  left: 30%;
+  width: 750px;
+}
+.admin-login > .square > .links > form {
+  width: 800px;
+}
+.admin-login > .square > .links > form > label {
+  height: 400px;
+}
+.admin-login > .square > .links > form > input {
+  width: 380px;
+  background-color: white;
+  font-size: 20px;
+  font-family: roboto;
+  color: black;
+  border-radius: 7px;
+  background: var(--E2, #ffffff);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.39);
+}
+.admin-login > .square > .links > form > input[type="submit"] {
+  position: relative;
+  top: 10%;
+  left: 0%;
+  background-color: #d6a419;
+  border-radius: 10px;
+  width: 110px;
+  font-size: 30px;
+  font-family: roboto;
+  color: black;
+  cursor: pointer;
+  border-radius: 15px;
+  background: var(--E2, #ffeeca);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.39);
+}
+.admin-login > .square > .links > form > button {
+  background-color: #d6a419;
+  border-radius: 10px;
+  width: 110px;
+  font-size: 20px;
+  font-family: roboto;
+  color: black;
+  cursor: pointer;
+  border-radius: 15px;
+  background: var(--E2, #ffeeca);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.39);
+}
+.admin-login > .square > .logout {
+  position: inherit;
+  top: 78%;
+  left: 40%;
+  background-color: #d6a419;
+  border-radius: 10px;
+  font-size: 30px;
+  font-family: roboto;
+  color: black;
+  cursor: pointer;
+  border-radius: 15px;
+  background: var(--E2, #ffeeca);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.39);
+}
+.admin-login > .square > .reset {
+  position: inherit;
+  top: 78%;
+  left: 70%;
+  background-color: #d6a419;
+  border-radius: 10px;
+  font-size: 30px;
+  font-family: roboto;
+  color: black;
+  cursor: pointer;
+  border-radius: 15px;
+  background: var(--E2, #ffeeca);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.39);
+}

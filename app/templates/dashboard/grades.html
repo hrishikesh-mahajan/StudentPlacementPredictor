@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/grades.css') }}" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" />
+  <title>Grades</title>
+  <meta name="description" content="SWOT Analysis App built using Flask." />
+  <meta name="author" content="VIIT Students" />
+  <meta name="theme-color" content="transparent" />
+  <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="transparent" />
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/icons/apple-touch-icon.png') }}"
+    sizes="180x180" />
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon" sizes="32x32" />
+</head>
+
+<body>
+  <div class="login-2-6-para">
+    <div class="login-2-6-para-child">
+      <div class="parameters">
+        <div class="parameters-child">
+          <b class="Name">{{ user['Full Name'] }}</b>
+          <b class="Branch">TY - {{ user["Branch"] }}</b>
+          <b class="PRN">{{ user["PRN"] }}</b>
+          <b class="CGPA">CGPA: {{ user["Latest CGPA"] }}</b>
+          <b class="Language">
+            {% if user["Developer"] %}
+            {{ user["Programming Language Preference [1]"] }} Developer
+            {% else %}
+            {{ user["Branch"] }} Engineer
+            {% endif %}
+          </b>
+          <div class="Percentile">
+            <h3>Percentile</h3>
+            <h1>{{ user["percentile"] }}</h1>
+          </div>
+          <div class="Grade">
+            <h3>Grade</h3>
+            <h1>{{ user["grade"] }}</h1>
+          </div>
+          <hr class="hr" />
+          <h2 class="overall-analysis-container">Grade Analysis</h2>
+          <h3>DSA:</h3>
+          <p class="DSA">Text Here</p>
+          <br>
+          <h3>Academics:</h3>
+          <p class="Academics">Text Here</p>
+          <br>
+          <h3>Projects:</h3>
+          <p class="Project">Text Here</p>
+          <br>
+          <h3>Internships:</h3>
+          <p class="Internship">Text Here</p>
+          <br>
+          <h3>Hackathons:</h3>
+          <p class="Hackathon">Text Here</p>
+          <br>
+          <h3>Industry Projects:</h3>
+          <p class="Research">Text Here</p>
+        </div>
+      </div>
+    </div>
+    <div class="icon-line-chart-parent">
+      <button class="icon-line-chart" onclick="window.location.href='/analysis'"></button>
+      <button class="icon-pie-chart" onclick="window.location.href='/dashboard'"></button>
+      <button class="icon-user" onclick="window.location.href='/profile'"></button>
+    </div>
+  </div>
+  <div style="display: none">
+    <var class="dsa">{{ user["dsa_percentile"] }}</var>
+    <var class="projects">{{ user['Participation Count [Mini Projects]'] }}</var>
+    <var class="hackathons">{{ user['Participation Count [Hackathons]'] }}</var>
+    <var class="academics">{{ user['cgpa_percentile'] }}</var>
+    <var class="internships">{{ user['Participation Count [Internships]'] }}</var>
+    <var class="research">{{ user["Participation Count [Industry Projects]"] }}</var>
+  </div>
+  <script>
+    var dsaScore = document.querySelector(".dsa").innerHTML;
+    var academicsScore = document.querySelector(".academics").innerHTML;
+    var projectsDone = document.querySelector(".projects").innerHTML;
+    var internshipsDone = document.querySelector(".internships").innerHTML;
+    var numberOfHackathons = document.querySelector(".hackathons").innerHTML;
+    var industryProjects = document.querySelector(".research").innerHTML;
+    if (dsaScore >= 80) {
+      document.querySelector(".DSA").innerHTML = "You are good in DSA, try to maintain this score.";
+    }
+    else if (dsaScore < 80 && dsaScore >= 60) {
+      document.querySelector(".DSA").innerHTML = "You are not so good in DSA, try to improve your DSA score.";
+    }
+    else {
+      document.querySelector(".DSA").innerHTML = "You are poor in DSA, try to focus on DSA. Practice more questions on platforms like LeetCode.";
+    }
+    if (academicsScore >= 80) {
+      document.querySelector(".Academics").innerHTML = "Your academic score is good, try to maintain CGPA in next semester.";
+    }
+    else if (academicsScore < 80 && academicsScore >= 60) {
+      document.querySelector(".Academics").innerHTML = "Your academic score is not so good, try to improve your CGPA in next semester.";
+    }
+    else {
+      document.querySelector(".Academics").innerHTML = "Your academic score is poor, try to focus on academic studies and to increase CGPA.";
+    }
+    if (projectsDone >= 3 || projectsDone == '5+') {
+      document.querySelector(".Project").innerHTML = "You have done good number of projects.";
+    }
+    else if (projectsDone < 3 && projectsDone >= 2) {
+      document.querySelector(".Project").innerHTML = "Try to do 1 or 2 more projects.";
+    }
+    else {
+      document.querySelector(".Project").innerHTML = "Try doing more projects, these many are not sufficient.";
+    }
+    if (internshipsDone >= 2 || internshipsDone == '5+') {
+      document.querySelector(".Internship").innerHTML = "Nice job, completing more than one internships is really a good factor.";
+    }
+    else if (internshipsDone < 2 && internshipsDone >= 1) {
+      document.querySelector(".Internship").innerHTML = "Ohh nice, you have done one internship. Try to have one more for more opportunities.";
+    }
+    else {
+      document.querySelector(".Internship").innerHTML = "You haven't done any internships. Try to do at least one internship before placement season.";
+    }
+    if (numberOfHackathons >= 3 || numberOfHackathons == '5+') {
+      document.querySelector(".Hackathon").innerHTML = "Congratulations!! Parcipating in hackathons really helps our competetive nature and problem solving skills. Take part in some more hackathons if you get chance.";
+    }
+    else if (numberOfHackathons < 3 && numberOfHackathons >= 1) {
+      document.querySelector(".Hackathon").innerHTML = "To improve your problem solving and competetive skills, take part in more hackathons. It will increase your skills definetly.";
+    }
+    else {
+      document.querySelector(".Hackathon").innerHTML = "Ohh, you haven't participated in any hackathons yet, try to participate as it will definetly help you to improve your coding skills and problem solving ability.";
+    }
+    if (industryProjects >= 3 || industryProjects == '5+') {
+      document.querySelector(".Research").innerHTML = "Very nice, completing three to five industry projects is eatra-ordinary. Now you can try to focus on other parameters if needed.";
+    }
+    else if (industryProjects < 3 && industryProjects >= 1) {
+      document.querySelector(".Research").innerHTML = "Good, having one or more industry projects is a good plus point to have from the placement point of view, see if you can do one more industry project.";
+    }
+    else {
+      document.querySelector(".Research").innerHTML = "Ohhh!!! you haven't done any industry project yet!!! Try to have industry projects in your profile as it helps to understand the corporate world and also it adds value to your profile.";
+    }
+  </script>
+</body>
+
+</html>

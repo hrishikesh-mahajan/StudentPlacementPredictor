@@ -1,0 +1,97 @@
+:root {
+  --font-roboto: Roboto;
+  --font-size-6xl: 25px;
+  --eighth: #65a7e4;
+  --white: #ffffff;
+  --e1: #d6a419;
+}
+.login-2-6-para-child {
+  background: linear-gradient(180deg, #00274e, rgba(0, 71, 147, 0));
+}
+.parameters-child {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(217, 217, 217, 0));
+  box-shadow: 0 3.9px 23.43px -0.98px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  align-items: center;
+}
+.overall-analysis-container {
+  margin: 0;
+  position: absolute;
+  top: 143px;
+  width: 100%;
+  text-align: center;
+  color: var(--E1, #d6a419);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  /* height: 80%; */
+}
+.parameters-child > h3 {
+  margin: 0;
+  position: relative;
+  top: 200px;
+  left: 10%;
+  width: 80%;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+  /* overflow-y: scroll; */
+}
+p {
+  position: relative;
+  color: white;
+  text-align: left;
+  left: 10%;
+  top: 200px;
+  font-size: 20px;
+  width: 80%;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+}
+.parameters {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 0 29.29px rgba(0, 0, 0, 0.39);
+}
+.login-2-6-para {
+  position: relative;
+  background-color: var(--eighth);
+  width: 100%;
+  overflow-y: scroll;
+  text-align: left;
+  font-size: var(--font-size-lg);
+  color: var(--white);
+  font-family: var(--font-roboto);
+}
+.icon-line-chart {
+  background: url("../images/icon-line-chart-selected.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.lowerside-home {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  height: 75px;
+  align-content: space-evenly;
+}
+.parameters-child1 {
+  position: absolute;
+  top: 880px;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--e1);
+  box-shadow: var(--shadow);
+  width: 90%;
+  height: 84px;
+}

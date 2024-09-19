@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  --font-roboto: Roboto;
+  --font-size-6xl: 25px;
+  --font-size-16xl: 35px;
+  --white: #fff;
+  --color-gray: rgb(255, 255, 255);
+  --color-gainsboro: rgba(217, 217, 217, 0);
+  --e1: #d6a419;
+  --br-xs: 12px;
+  --br-18xl-8: 37.8px;
+}
+.instance-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 37.84px;
+  background-color: var(--white);
+  box-shadow: 0 0 26.4px rgba(0, 0, 0, 0.39);
+  width: 176px;
+  height: 176px;
+}
+.viit-logo-1-icon {
+  position: absolute;
+  top: 27.28px;
+  left: 39.6px;
+  width: 95.92px;
+  height: 118.82px;
+  object-fit: cover;
+}
+.rectangle-parent {
+  position: absolute;
+  top: 105px;
+  left: calc(50% - 88px);
+  width: 176px;
+  height: 176px;
+}
+.student-placement-analysis {
+  margin: 0;
+}
+.student-placement-analysis-container {
+  position: absolute;
+  top: 300px;
+  left: calc(50% - 385px);
+  font-size: 50px;
+  font-weight: 900;
+  color: var(--white);
+}
+.admin-login {
+  position: absolute;
+  background: linear-gradient(180deg, #000d4e, #487acd);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-6xl);
+  color: var(--color-gray);
+  font-family: var(--font-roboto);
+}
+.admin-login > form {
+  position: absolute;
+  top: 450px;
+  left: calc(50% - 150px);
+  width: 300px;
+  height: 228.8px;
+  object-fit: cover;
+}
+.admin-login > form > label {
+  color: white;
+}
+.admin-login > form > input {
+  height: 20px;
+  border-radius: 10px;
+}
+.admin-login > form > input[type="submit"] {
+  position: relative;
+  top: 5%;
+  left: 0%;
+  height: 30px;
+  cursor: pointer;
+  background-color: #d6a419;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: var(--font-roboto), sans-serif;
+  font-weight: bold;
+  color: #000d4e;
+  border: none;
+}
+.admin-login > form > a {
+  position: relative;
+  top: 5%;
+  left: 10%;
+  cursor: pointer;
+  background-color: #d6a419;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: var(--font-roboto), sans-serif;
+  font-weight: bold;
+  color: #000d4e;
+  text-decoration: none;
+  padding: 3.5px 3.5px;
+}
+.admin-login > .login {
+  position: relative;
+  background-color: #d6a419;
+  border-radius: 10px;
+  top: 550px;
+  height: 45px;
+  width: 100px;
+  font-size: 30px;
+  font-family: roboto;
+  color: white;
+  cursor: pointer;
+}
+.flash {
+  margin: 1em 0;
+  padding: 1em;
+  background: #cae6f6;
+  border: 1px solid #377ba8;
+}

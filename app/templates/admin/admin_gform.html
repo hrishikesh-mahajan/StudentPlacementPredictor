@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_gform.css') }}" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" />
+  <title>Google Forms - Admin</title>
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon" sizes="32x32" />
+</head>
+
+<body>
+  <div class="admin-login">
+    <h4>Student Placement Analysis Admin Portal Login</h4>
+    <div class="square">
+      <div class="mob">
+        <img src="{{ url_for('static', filename='images/mobile.svg') }}" alt="">
+      </div>
+      <div class="frames">
+        <h3>FY G-Form</h3>
+        <iframe id="iframe" src="{{ CURRENT_CONFIG['GOOGLE_FORM_LINK_FY'] }}" frameborder="0"></iframe>
+      </div>
+      <div class="upper_buttons">
+        <button class="dashboard" onclick="window.location.href='/admin'"></button>
+        <button class="gform" onclick="window.location.href='/admin/gform'"></button>
+        <button class="email" onclick="window.location.href='/admin/email'"></button>
+      </div>
+      <div class="links">
+        <form method="POST">
+          <label for="GOOGLE_FORM_LINK_FY">Form for FY:</label>
+          <input type="link" name="GOOGLE_FORM_LINK_FY" id="GOOGLE_FORM_LINK_FY"
+            value="{{ CURRENT_CONFIG['GOOGLE_FORM_LINK_FY'] }}">
+          <button type="button"
+            onclick="document.getElementById('iframe').src = document.getElementById('GOOGLE_FORM_LINK_TY').value">VIEW</button>
+          <label for="GOOGLE_FORM_LINK_SY"><br><br>Form for SY:</label>
+          <input type="link" name="GOOGLE_FORM_LINK_SY" id="GOOGLE_FORM_LINK_SY"
+            value="{{ CURRENT_CONFIG['GOOGLE_FORM_LINK_SY'] }}">
+          <button type="button"
+            onclick="document.getElementById('iframe').src = document.getElementById('GOOGLE_FORM_LINK_TY').value">VIEW</button>
+          <label for="GOOGLE_FORM_LINK_TY"><br><br>Form for TY:</label>
+          <input type="link" name="GOOGLE_FORM_LINK_TY" id="GOOGLE_FORM_LINK_TY"
+            value="{{ CURRENT_CONFIG['GOOGLE_FORM_LINK_TY'] }}">
+          <button type="button"
+            onclick="document.getElementById('iframe').src = document.getElementById('GOOGLE_FORM_LINK_TY').value">VIEW</button>
+          <label for="GOOGLE_FORM_LINK_BTECH"><br><br>Form for BTech:</label>
+          <input type="link" name="GOOGLE_FORM_LINK_BTECH" id="GOOGLE_FORM_LINK_BTECH"
+            value="{{ CURRENT_CONFIG['GOOGLE_FORM_LINK_BTECH'] }}">
+          <button type="button"
+            onclick="document.getElementById('iframe').src = document.getElementById('GOOGLE_FORM_LINK_TY').value">VIEW</button>
+          <label for=""><br><br></label>
+          <input type="submit" value="SAVE">
+        </form>
+        <button class="reset" onclick="location.reload(true)">
+          RESET
+        </button>
+        <button class="logout" onclick="window.location.href='/auth-admin/logout'">
+          LOGOUT
+        </button>
+        <button class="updateindb" onclick="window.location.href='/admin/update'">Update in Database</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

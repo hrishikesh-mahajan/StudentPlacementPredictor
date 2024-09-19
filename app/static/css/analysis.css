@@ -1,0 +1,179 @@
+:root {
+  --font-roboto: Roboto;
+  --font-size-6xl: 25px;
+  --eighth: #65a7e4;
+  --white: #ffffff;
+  --e1: #d6a419;
+}
+.login-2-6-para-child {
+  background: linear-gradient(180deg, #00274e, rgba(0, 71, 147, 0));
+  border-bottom-left-radius: 50% 10%;
+  border-bottom-right-radius: 10% 10%;
+}
+.parameters-child {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(217, 217, 217, 0));
+  box-shadow: 0 3.9px 23.43px -0.98px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  align-items: center;
+}
+.overall-analysis-container {
+  margin: 0;
+  position: absolute;
+  top: 143px;
+  width: 100%;
+  text-align: center;
+  color: var(--E1, #d6a419);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+.DSA,
+.Project,
+.Hackathon,
+.academics,
+.Internship,
+.Research {
+  position: relative;
+  font-weight: 900;
+  background-color: #6d99ef;
+  height: 150px;
+  min-width: 135px;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px black;
+}
+.DSA > h3,
+.academics > h3,
+.Project > h3,
+.Internship > h3,
+.Hackathon > h3,
+.Research > h3 {
+  position: relative;
+  top: 0px;
+  color: #000d4e;
+}
+.DSA > h1,
+.academics > h1,
+.Project > h1,
+.Internship > h1,
+.Hackathon > h1,
+.Research > h1 {
+  position: relative;
+  bottom: 35%;
+  font-size: 80px;
+}
+.rectangle-parent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+.group-div {
+  position: absolute;
+  font-size: var(--font-size-77xl);
+  color: var(--first);
+}
+.group-div {
+  top: 200px;
+  left: 5%;
+  width: 90%;
+}
+.rectangle-parent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  place-items: center;
+}
+@media (max-width: 600px) {
+  .rectangle-parent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1280px) {
+  .rectangle-parent {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+.parameters-child1 {
+  position: absolute;
+  top: 880px;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--e1);
+  box-shadow: var(--shadow);
+  width: 90%;
+  height: 84px;
+}
+.grade-analysis {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: grid;
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--first);
+  font-family: var(--font-roboto);
+}
+.grade-analysis > button {
+  margin-bottom: 10px;
+  place-self: center;
+  cursor: pointer;
+  background-color: #d6a419;
+  border-radius: 10px;
+  font-size: 30px;
+  font-family: var(--font-roboto), sans-serif;
+  font-weight: bold;
+  color: white;
+}
+.grade-analysis > button > a {
+  text-decoration: none;
+  color: white
+}
+.component-5-child {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--first);
+}
+.icon-line-chart {
+  background: url("../images/icon-line-chart-selected.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.lowerside-home {
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+  width: 100%;
+  height: 75px;
+}
+.login-2-6-para {
+  position: relative;
+  background-color: var(--eighth);
+  width: 100%;
+  overflow-y: auto;
+  text-align: left;
+  font-size: var(--font-size-lg);
+  color: var(--white);
+  font-family: var(--font-roboto);
+}
+.makeGreen {
+  background: linear-gradient(rgb(151, 234, 151), rgb(36, 122, 9));
+}
+.makeYellow {
+  background: linear-gradient(rgb(253, 213, 152), rgb(185, 125, 4));
+}
+.makeRed {
+  background: linear-gradient(rgb(242, 154, 154), rgb(174, 6, 6));
+}

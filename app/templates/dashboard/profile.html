@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" />
+  <title>Profile</title>
+  <meta name="description" content="SWOT Analysis App built using Flask." />
+  <meta name="author" content="VIIT Students" />
+  <meta name="theme-color" content="transparent" />
+  <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="transparent" />
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/icons/apple-touch-icon.png') }}"
+    sizes="180x180" />
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon" sizes="32x32" />
+</head>
+
+<body>
+  <div class="login-2-6-para">
+    <div class="login-2-6-para-child"></div>
+    <div class="parameters">
+      <div class="parameters-child">
+        <b class="Name">{{ user['Full Name'] }}</b>
+        <b class="Branch">TY - {{ user["Branch"] }}</b>
+        <b class="PRN">{{ user["PRN"] }}</b>
+        <b class="CGPA">CGPA: {{ user["Latest CGPA"] }}</b>
+        <b class="Language">
+          {% if user["Developer"] %}
+          {{ user["Programming Language Preference [1]"] }} Developer
+          {% else %}
+          {{ user["Branch"] }} Engineer
+          {% endif %}
+        </b>
+        <div class="Percentile">
+          <h3>Percentile</h3>
+          <h1>{{ user["percentile"] }}</h1>
+        </div>
+        <div class="Grade">
+          <h3>Grade</h3>
+          <h1>{{ user["grade"] }}</h1>
+        </div>
+        <hr class="hr">
+        <h2 class="overall-analysis-container">
+          My Profile
+        </h2>
+        <div class="profile-container">
+          <div class="profile-info">
+            <div class=" one">
+              <h6>Name:</h6>
+              <h6 class="scn">{{ user['Full Name'] }}</h6>
+            </div>
+            <div class="two">
+              <h6>PRN:</h6>
+              <h6 class="scn">{{ user["PRN"] }}</h6>
+            </div>
+            <div class="three">
+              <h6>Year:</h6>
+              <h6 class="scn">TY</h6>
+            </div>
+            <div class="four">
+              <h6>Branch:</h6>
+              <h6 class="scn">{{ user["Branch"]}}</h6>
+            </div>
+            <div class="five">
+              <h6>CGPA:</h6>
+              <h6 class="scn">{{ user["Latest CGPA"] }}</h6>
+            </div>
+            {% if user["LinkedIn"] %}
+            <div class="six">
+              <h6>LinkedIn:</h6>
+              <h6 class="scn">
+                <a href="{{ user['LinkedIn'] }}">
+                  {{ user["LinkedIn"].split('/')[-1] }}
+                </a>
+              </h6>
+            </div>
+            {% endif %}
+            {% if user["LeetCode"] %}
+            <div class="seven">
+              <h6>LeetCode:</h6>
+              <h6 class="scn">
+                <a href="{{ user['LeetCode'].split('?')[0] }}">
+                  {{ user["LeetCode"].split('/')[-1] }}
+                </a>
+              </h6>
+            </div>
+            {% endif %}
+            {% if user["GitHub"] %}
+            <div class="eight">
+              <h6>GitHub:</h6>
+              <h6 class="scn">
+                <a href="{{ user['GitHub'].split('?')[0] }}">
+                  {{ user["GitHub"].split('/')[-1] }}
+                </a>
+              </h6>
+            </div>
+            {% endif %}
+          </div>
+          <div class="profile_buttons">
+            <div class="p_btn">
+              <button class="p_btn1" onclick="window.location.href='/form'">
+                Update
+              </button>
+            </div>
+            <div class="p_btn">
+              <button class="p_btn1" onclick="window.location.href='/resume'">
+                Resume
+              </button>
+            </div>
+            <div class="p_btn">
+              <button class="p_btn1" onclick="window.location.href='/update'">
+                Refresh
+              </button>
+            </div>
+            <div class="p_btn">
+              <button class="p_btn1 logout_button" onclick="window.location.href='/auth/logout'">
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="icon-line-chart-parent">
+      <button class="icon-line-chart" onclick="window.location.href='/analysis'">
+      </button>
+      <button class="icon-pie-chart" onclick="window.location.href='/dashboard'">
+      </button>
+      <button class="icon-user" onclick="window.location.href='/profile'">
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>
